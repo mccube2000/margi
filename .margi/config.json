@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "margi",
+    "root": "src/",
+    "exclude": [
+      "node_modules",
+      "dist",
+      "target",
+      ".git",
+      ".nuxt",
+      ".next",
+      ".output",
+      "coverage",
+      "*.test.ts",
+      "*.spec.ts",
+      "*.test.rs"
+    ]
+  },
+  "modules": {
+    "auto_detect": true,
+    "scan_depth": 3,
+    "manual": []
+  },
+  "search": {
+    "chunk_size": 150,
+    "chunk_overlap": 20,
+    "embedding": {
+      "url": "http://localhost:8443/v1/embeddings",
+      "model": "text-embedding"
+    }
+  },
+  "memory": {
+    "auto_sync_to_agents_md": true,
+    "max_global_notes_in_agents_md": 10
+  },
+  "hooks": {
+    "post_commit": true,
+    "outdated_check_on_diff": true
+  }
+}

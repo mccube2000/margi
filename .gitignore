@@ -1,0 +1,22 @@
+# margi 搜索索引（本地缓存，不提交）
+.margi/.index/
+
+*local.json
+
+/target
+*.lock
+.DS_Store
+*.db
+
+
+# Python
+__pycache__/
+.venv/
+venv/
+*.pyc
+
+# Secret
+.secret_key
+.env
+*.key
+*.pem

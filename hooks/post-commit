@@ -1,0 +1,7 @@
+#!/bin/sh
+# margi post-commit hook
+# 每次 commit 后自动检测受影响的模块并标记为 outdated
+
+if command -v margi >/dev/null 2>&1; then
+    margi diff --staged
+fi

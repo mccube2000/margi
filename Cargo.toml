@@ -1,0 +1,66 @@
+[package]
+name = "margi"
+version = "0.1.0"
+edition = "2021"
+description = "AI-Assisted Context Management System for Large-Scale Projects"
+license = "MIT"
+authors = ["MC_cubes"]
+homepage = "https://github.com/mccube2000/margi"
+repository = "https://github.com/mccube2000/margi"
+keywords = ["cli", "documentation", "code-search", "developer-tools"]
+categories = ["command-line-utilities", "development-tools"]
+readme = "README.md"
+
+[package.metadata.wix]
+upgrade-guid = "868201DE-ED4A-4CDC-B162-2C5537F22B4C"
+path-guid = "761B8E0F-20BB-45EE-8F7B-E6C2E5B16697"
+license = false
+eula = false
+
+[[bin]]
+name = "margi"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.31", features = ["bundled"] }
+sqlite-vec = "0.1"
+walkdir = "2"
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1"
+colored = "2"
+ignore = "0.4"
+regex = "1"
+sha2 = "0.10"
+hex = "0.4"
+git2 = { version = "0.19", default-features = false, features = [
+    "vendored-openssl",
+] }
+thiserror = "1"
+path-slash = "0.2"
+dirs = "5"
+reqwest = { version = "0.12", default-features = false, features = [
+    "blocking",
+    "json",
+    "rustls-tls",
+] }
+
+# Tree-sitter core + language grammars
+tree-sitter = "0.20"
+tree-sitter-rust = "0.20"
+tree-sitter-javascript = "0.20"
+tree-sitter-typescript = "0.20"
+tree-sitter-python = "0.20"
+tree-sitter-go = "0.20"
+tree-sitter-java = "0.20"
+tree-sitter-c = "0.20"
+tree-sitter-cpp = "0.20"
+tree-sitter-c-sharp = "0.20"
+tree-sitter-ruby = "0.20"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
